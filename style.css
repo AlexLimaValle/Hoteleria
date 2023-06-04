@@ -20,6 +20,8 @@
     justify-content:space-between;
     align-items: center;
     top:0px;
+    z-index: 10;
+    transition: background .2s;
 }
 .header .header__img{
     height: 40%;
@@ -88,24 +90,43 @@
 }
 
 .carrusel{
-    /* position: relative; */
+    position: relative;
     margin-top: 12vh;
     z-index: 1;
-    top:12vh;
     width: 100%;
     height: 50vh;
     overflow: hidden;
-    background-color: red;
     background-attachment: fixed;
 }
 
+.carrusel .carrusel__buttons{
+    position:absolute;
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: center;
+    align-items: center;
+    top:85%;
+    width: 100%;
+    height: 10%;
+    z-index: 2;
+}
+.carrusel .carrusel__buttons .carrusel__button{
+    margin-left: 15px;
+    font-size: 1.1rem;
+    color:#fff7f79a;
+    transition: color .3s;
+}
+
+.carrusel .carrusel__buttons .carrusel__button:hover{
+    color:#fff;
+    cursor: pointer;
+}
 .carrusel .carrusel__content{
     width: 300%;
     height: 100%;
     display: flex;
-    /* position: relative; */
-  /*   left: -680px; */
     flex-flow: row nowrap;
+    transition: transform .6s;
 }
 .carrusel .carrusel__content .carrusel__slider{
     width: 100%;
@@ -115,7 +136,7 @@
 .carrusel .carrusel__content .carrusel__one.carrusel__slider{
     width: 100%;
     height: 100%;
-    background-image: url(./img/phi.jfif);
+    background-image: url(./img/bosque-2.jfif);
     background-size: cover;
     background-position: center ;
 }
