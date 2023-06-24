@@ -34,13 +34,27 @@
     margin-left: 15px;
     position: relative;
 }
+.header__toggle--animate{
+    transform: rotate(180deg);
+}
 .header .header__toggle .header__span{
     position:absolute;
     width: 100%;
     height: 6px;
     background-color: #bbb6b6;
 }
-
+.header .header__toggle .header__span.header__span--animate{
+    width: 45%;
+    right: 0%;
+    transform: rotate(40deg);
+    top:20%
+}
+.header .header__toggle .header__span.header__span--animate-2 {
+    width: 45%;
+    right: 0%;
+    transform: rotate(-40deg);
+    bottom: 20%;
+}
 .header .header__toggle .header__span--1{
     margin-top: 12px;
 }
@@ -56,7 +70,6 @@
 .header .nav{
     position:fixed;
     top:12vh;
-    right: 100%; 
     /* right debe ser cambiado para hacer alucion a movimiento */
     width: 70%;
     height: 88vh;
@@ -65,8 +78,14 @@
     flex-flow: column wrap;
     justify-content: center;
     z-index: 10;
+    transition: right 2s;
+    left: 0%;
+    transition: left 2s;
 }
 
+.header .nav--none{
+    left:-100%;
+}
 
 .header .nav .nav__ul{
     width: 100%;
@@ -76,19 +95,46 @@
 
 .header .nav .nav__ul .nav__li{
     width: 100%;
-    height: 15%;
+    height: auto;
+    padding:10px 0px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     align-items: start;
+    margin-bottom: 5px;
+}
+.header .nav .nav__ul .nav__li:hover{
+    background-color:#494949;
 }
 
 .header .nav .nav__ul .nav__li .nav__a{
-    color:#fff;
+    color:#dbd3d3;
     text-decoration: none;
     margin-left: 20px;
+    font-size: 1.3rem;
+    font-weight: bolder;
 }
 
+.header .nav .nav__ul .nav__li .nav__li-ul{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    list-style-type: none;
+    flex-flow: row wrap;
+    align-items: center;
+}
+.header .nav .nav__ul .nav__li .nav__li-ul .nav__li-li{
+    font-size: 1.2rem;
+    margin-left: 40px;
+}
+.header .nav .nav__ul .nav__li .nav__li-ul .nav__li-li .nav__li-a{
+    text-decoration: none;
+    font-weight: bolder;
+    color:#dbd3d3;
+}
+.header .nav .nav__ul .nav__li .nav__li-ul.nav__li-ul--display{
+    display: none;
+}
 .carrusel{
     position: relative;
     margin-top: 12vh;

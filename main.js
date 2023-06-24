@@ -24,10 +24,6 @@ slider_buttons.addEventListener("click",(event)=>{
 
 
 const header = document.querySelector(".header");
-
-
-
-
 window.addEventListener("scroll",()=>{
     if(window.scrollY > 450){
         header.style.background = "#1b1515";
@@ -35,3 +31,24 @@ window.addEventListener("scroll",()=>{
         header.style.background = "transparent";
     }
 })
+
+
+const nav = document.querySelector(".nav");
+const header_toggle = document.querySelector(".header__toggle");
+
+header_toggle.addEventListener("click",()=>{
+    nav.classList.toggle("nav--none");
+});
+
+const getAddOption = (event)=>{
+    const {target} = event;
+    if(target.classList.contains("nav__li")){
+        const hijos = target.children;
+        hijos[1].classList.toggle("nav__li-ul--display");
+    }
+}
+
+
+nav.addEventListener("click",getAddOption);
+
+
